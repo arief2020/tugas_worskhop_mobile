@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">selection widget</string>
+    <string-array name="pendidikan">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>D3</item>
+        <item>S1/D4</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
+</resources>
