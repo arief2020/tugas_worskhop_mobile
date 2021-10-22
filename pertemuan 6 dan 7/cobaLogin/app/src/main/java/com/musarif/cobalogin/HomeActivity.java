@@ -13,16 +13,13 @@ public class HomeActivity extends AppCompatActivity {
     TextView halo;
     Button ig, calculator;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-
         halo = findViewById(R.id.hi);
         ig = findViewById(R.id.instagram);
         calculator = findViewById(R.id.calculator);
-
 
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("user");

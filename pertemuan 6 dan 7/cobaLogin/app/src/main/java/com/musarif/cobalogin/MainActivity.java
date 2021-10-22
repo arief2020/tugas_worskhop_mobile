@@ -21,27 +21,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         masuk = findViewById(R.id.btnLogin);
+        username = findViewById(R.id.username);
         usernameKey = username.getText().toString();
 
         remember = MainActivity.this.getSharedPreferences("token", Context.MODE_PRIVATE);
-        String uname = remember.getString("user","kosong");
+        String uname = remember.getString("user",usernameKey);
         if (uname.isEmpty()){
-
         }else{
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            intent.putExtra("user",usernameKey);
+            intent.putExtra("user",uname);
             startActivity(intent);
         }
-        usernameKey = username.getText().toString();
-        passwordKey = password.getText().toString();
+
         masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                usernameKey = username.getText().toString();
+                passwordKey = password.getText().toString();
 
                 if (usernameKey.equals("msyaifullahalarief@gmail.com") && passwordKey.equals("123")){
                     SharedPreferences.Editor editor = remember.edit();
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this,HomeActivity.class);
                     intent.putExtra("user", usernameKey);
                     startActivity(intent);
-                    Toast.makeText(MainActivity.this, "hai" + usernameKey, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "hai " + usernameKey, Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
                     Toast.makeText(MainActivity.this, "username or password invalid", Toast.LENGTH_SHORT).show();
