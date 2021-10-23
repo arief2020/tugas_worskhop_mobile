@@ -1,4 +1,4 @@
-# tugas_worskhop_mobile
+# tugas_worskhop_mobile_application
 NIM : E32202398
 Nama : Muhammad Syaifullah Al Arief
 
