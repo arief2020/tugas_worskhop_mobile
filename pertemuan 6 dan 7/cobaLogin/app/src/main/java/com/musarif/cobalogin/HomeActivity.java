@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
     TextView halo;
-    Button ig, calculator;
+    Button ig, calculator, locations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
         halo = findViewById(R.id.hi);
         ig = findViewById(R.id.instagram);
         calculator = findViewById(R.id.calculator);
+        locations = findViewById(R.id.location);
 
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("user");
@@ -41,6 +42,14 @@ public class HomeActivity extends AppCompatActivity {
                 incalculator.setAction(Intent.ACTION_MAIN);
                 incalculator.addCategory(Intent.CATEGORY_APP_CALCULATOR);
                 startActivity(incalculator);
+            }
+        });
+
+        locations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent lokasi = new Intent(HomeActivity.this, locationActivity.class);
+                startActivity(lokasi);
             }
         });
 

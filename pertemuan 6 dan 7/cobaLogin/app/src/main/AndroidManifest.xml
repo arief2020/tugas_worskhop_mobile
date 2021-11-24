@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.musarif.cobalogin">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CobaLogin">
+        <activity
+            android:name=".locationActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="true" />
@@ -26,24 +32,26 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:host="developer.android.com" android:scheme="http" />
+                <data
+                    android:host="developer.android.com"
+                    android:scheme="http" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.APP_CALCULATOR"/>
+                <category android:name="android.intent.category.APP_CALCULATOR" />
 
-                <data android:host="developer.android.com" android:scheme="http" />
+                <data
+                    android:host="developer.android.com"
+                    android:scheme="http" />
             </intent-filter>
-
         </activity>
     </application>
 
